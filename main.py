@@ -10,6 +10,8 @@ SNAKE_COLOR = "wheat"
 FOOD_COLOR = "brown"
 BACKGROUND_COLOR = "tan"
 
+print("I am also adaptive and a good learner, which is a vital skill as a Software Engineer due to the constant change in the technology industry therefore, being able to learn new technologies and relevant tools to a given task becomes very handy in many cases. Another one of the most useful courses that I have taken in KIT is, Learning How to Learn. The course taught me effective and ineffective learning techniques, techniques that are good for specific subjects and good and bad brain habits.".count(" "))
+
 class Snake:
 
     def __init__(self):
@@ -60,7 +62,7 @@ def next_turn(snake, food):
 
         score += 1
 
-        label.config(text="Score: {}".format(score))
+        label.config(text="Score = {}".format(score))
 
         canvas.delete('food')
 
@@ -133,7 +135,7 @@ while times > 0:
     score = 0
     direction = 'down'
 
-    label = Label(window, text="Score: {}".format(score), font=('consolas', 25))
+    label = Label(window, text=f"Score = {score}", font=('consolas', 25))
     label.pack()
 
     canvas = Canvas(window, bg=BACKGROUND_COLOR, width=GAME_WIDTH, height=GAME_HEIGHT)
