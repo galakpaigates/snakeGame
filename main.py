@@ -6,7 +6,7 @@ from pathlib import Path
 
 GAME_WIDTH = 630
 GAME_HEIGHT = 630
-SPEED = 80
+SPEED = 250
 SPACE_SIZE = 30
 BODY_PARTS = 3
 SNAKE_COLOR = "wheat"
@@ -85,9 +85,8 @@ class Food:
 
     def __init__(self):
 
-        x = random.randint(0, (GAME_WIDTH/SPACE_SIZE)-1) * SPACE_SIZE
+        x = random.randint(0, (GAME_WIDTH/SPACE_SIZE)-1) * SPACE_SIZE 
         y = random.randint(0, (GAME_HEIGHT/SPACE_SIZE)-1) * SPACE_SIZE
-
         self.coordinates = [x, y]
 
         canvas.create_oval(x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=FOOD_COLOR, tag="food")
@@ -122,6 +121,23 @@ def next_turn(snake, food):
         # update food
         canvas.delete('food')
         food = Food()
+
+        # increase the speed by 5 after the everytime the user reaches a multiple of ten
+        if score != 0 and score % 5 == 0:
+            global SPEED
+
+            if SPEED <= 69:
+                print(f"Score: {score} | SPEED: {SPEED}")
+                SPEED -= 8
+                print(f"New Speed: {SPEED}")
+            elif SPEED >= 70 and SPEED <= 100:
+                print(f"Score: {score} | SPEED: {SPEED}")
+                SPEED -= 12
+                print(f"New Speed: {SPEED}")
+            else:
+                print(f"Score: {score} | SPEED: {SPEED}")
+                SPEED -= 30
+                print(f"New Speed: {SPEED}")
         
         # do not delete the last body part to create the illusion of the snake growing longer
 
@@ -179,16 +195,14 @@ def check_collisions(snake):
 def game_over():
 
     canvas.delete(ALL)
-    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2.25, font=('cambria', 30), text="THERE WAS A COLLISION!", fill="red", tag="gameover")
-    replay_btn = Button(canvas, height=1, width=10, text="Replay", font=('cambria', 25), command=replay)
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2.25, font=('consolas', 30), text="THERE WAS A COLLISION!", fill="red", tag="gameover")
+    replay_btn = Button(canvas, height=1, width=10, text="Replay", font=('consolas', 25), bg=SNAKE_COLOR, activebackground=SNAKE_COLOR, command=replay)
     
     replay_btn.place(x=GAME_WIDTH/3, y=canvas.winfo_height()/2)
     
 def replay():
 
-    global times
-
-    times += 1
+    # rerun the entire program
     py_interpreter = sys.executable
     os.execl(py_interpreter, py_interpreter, *sys.argv)
 
