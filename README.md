@@ -1,8 +1,7 @@
 # Snake Game
 
 ##### Requirement:
-    Windows OS
-	Ubuntu (Debian) OS
+    Windows OS or Ubuntu (Debian) OS
 
 ## Download `Snake Game (Ubuntu)` and execute it on your Ubuntu (Debian) OS to Play this Snake Game!
 ## Download `Snake Game (Windows)` and execute it on your Windows OS to Play this Snake Game!
