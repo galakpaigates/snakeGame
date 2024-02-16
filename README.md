@@ -1,9 +1,16 @@
 # Snake Game
 
 ##### Requirement:
+<<<<<<< HEAD
 	Ubuntu (Debian) OS
 
 ## Download `Snake Game` and execute it on your Ubuntu (Debian) OS to Play this Snake Game!
+=======
+    Windows OS or Ubuntu (Debian) OS
+
+## Download `Snake Game (Ubuntu)` and execute it on your Ubuntu (Debian) OS to Play this Snake Game!
+## Download `Snake Game (Windows)` and execute it on your Windows OS to Play this Snake Game!
+>>>>>>> refs/remotes/origin/main
 
 ##### Note:
 ### Use of the Four (4) Navigations Arrows (Up, Down, Right & Left) to control and Snake and direct it to the Food

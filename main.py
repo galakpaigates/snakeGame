@@ -127,17 +127,11 @@ def next_turn(snake, food):
             global SPEED
 
             if SPEED <= 69:
-                print(f"Score: {score} | SPEED: {SPEED}")
                 SPEED -= 8
-                print(f"New Speed: {SPEED}")
             elif SPEED >= 70 and SPEED <= 100:
-                print(f"Score: {score} | SPEED: {SPEED}")
                 SPEED -= 12
-                print(f"New Speed: {SPEED}")
             else:
-                print(f"Score: {score} | SPEED: {SPEED}")
                 SPEED -= 30
-                print(f"New Speed: {SPEED}")
         
         # do not delete the last body part to create the illusion of the snake growing longer
 
